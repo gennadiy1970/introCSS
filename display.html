@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Display</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" integrity="sha256-oSrCnRYXvHG31SBifqP2PM1uje7SJUyX0nTwO2RJV54="
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <h4>Display</h4>
+        <p><a href="https://codepen.io/Gorbulin/pen/WywzaE?editors=1100" target="_blanck">codepen</a></p>
+        <ul>
+            <li>Внутри тега body все символы и теги преобразуются в прямоугольные области.</li>
+            <li>Каждый прямоугольник имеет свойства display: none | block | inline | inline-block</li>
+            <li>Отсчет размеров и положения блока ведется от левого верхнего угла.</li>
+        </ul>
+        <h4>display: none</h4>
+        <ul>
+            <li>элемент не попадет в DOM браузера </li>
+        </ul>
+        <h4>display: block</h4>
+        <ul>
+            <li>перед прямоугольником и после него стоят знаки переноса строки</li>
+            <li>занимает всю доступную ширину</li>
+            <li>width и height можно задавать</li>
+            <li>width и height образуют CONTENT AREA - место для потомков и контента</li>
+            <li>вставлять блочные элементы внутрь строчных запрещено</li>
+            <li>можно вкладывать один блочный элемент внутрь другого, а также строчные элементы внутри блочного</li>
+        </ul>
+        <h4>display: inline-block</h4>
+            <ul>
+                <li>то же что и block, только удалены знаки переноса перед и после блока</li>
+                <li>width и height можно задавать</li>
+                <li>между блоками появляются пробелы (знаки переноса строки в html)</li>
+                <li>размер пробелов = 1/4 размера шрифта (как правило, для некоторых шрифтов это не так)</li>
+                <li>выравнивание по вертикали с помощью свойства vertical-align</li>
+                <li>по умолчанию выравнивается по базовой линии</li>
+            </ul>
+            <p>способы избавиться от пробелов inline-block</p>
+            <ol>
+                <li>установить размер шрифта 0px контейнеру-предку</li>
+                <li>код в html без переносов   <code class="comment">// &lt;li&gt;1&lt;li/&gt;&lt;li&gt;2&lt;li/&gt;</code></li>
+                <li>отрицательный margin</li>
+                <li>не ставить закрывающие теги <code class="comment">// &lt;li&gt;1&lt;li&gt;2</code></li>
+                <li>удаление пробелов в списках<pre><code class="comment">       &lt;ul&gt;
+            &lt;li&gt;
+            1&lt;/li&gt;&lt;li&gt;
+            2&lt;/li&gt;
+       &lt;/ul&gt;          </code>
+                    </pre>
+                </li>
+            </ol>
+            <h4>display: inline</h4>
+            <ul>
+                <li>знаки переноса перед и после блока удаляются</li>
+                <li>ширина равна содержимое, задать ширину нельзя</li>
+                <li>выравнивание по вертикали с помощью свойства vertical-align</li>
+                <li>по умолчанию выравнивается по базовой линии</li>
+            </ul>
+    </div>
+</body>
+
+</html>

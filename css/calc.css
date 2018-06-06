@@ -1,0 +1,37 @@
+body {
+    background: navy;
+    font-family: sans-serif;
+    font-size: 16px;
+}
+
+.wrapper {
+    width: 960px;
+    min-height: 100vh;
+    background: #fff;
+    margin: auto;
+    font-size: 0;
+}
+
+.aside {
+    min-height: 100vh;
+    background: #800;
+    display: inline-block;
+    width: 200px;
+    font-size: 16px;
+    vertical-align: top;
+}
+
+.main {
+    display: inline-block;
+    min-height: 100vh;
+    background: #808; 
+    width: calc(960px - 200px);
+    font-size: 16px;
+    vertical-align: top;
+}
+
+h4 {
+    color: #fff;
+    text-align: center;
+    font-size: 36px;
+}

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SELECTOR</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" integrity="sha256-oSrCnRYXvHG31SBifqP2PM1uje7SJUyX0nTwO2RJV54=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="./css/style.css">
+    <style>
+        li {
+            color: gold;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <table>
+            <caption>
+                    <h2>Основных видов селекторов всего несколько:</h2>
+            </caption>
+            <tbody>
+                <tr>
+                    <th>селектор</th>
+                    <th>элементы</th>
+                </tr>
+                <tr>
+                    <td>*</td>
+                    <td>любые элементы</td>
+                </tr>
+                <tr>
+                    <td>div </td>
+                    <td>элементы с таким тегом</td>
+                </tr>
+                <tr>
+                    <td>#id</td>
+                    <td>элемент с данным id</td>
+                </tr>
+                <tr>
+                    <td>.class</td>
+                    <td>элементы с таким классом</td>
+                </tr>
+                <tr>
+                    <td>:hover </td>
+                    <td>элементы с таким псевдоклассом</td>
+                </tr>
+                <tr>
+                    <td>[name="value"]</td>
+                    <td>элементы с таким атрибутом</td>
+                </tr>
+                <tr>
+                    <td>a#top.menu.element:hover</td>
+                    <td>комбинирование элемент a с id top, классами menu и top.menu.element, и псевдоклассом hover</td>
+                </tr>
+            </tbody>
+        </table>
+                <table>
+                    <caption>
+                        <h2>Четыре вида отношений между элементами</h2>
+                    </caption>
+                    <tbody>
+                        <tr>
+                            <th>селектор</th>
+                            <th>элементы</th>
+                        </tr>
+                        <tr>
+                            <td>div p </td>
+                            <td>элементы p, являющиеся потомками div</td>
+                        </tr>
+                        <tr>
+                            <td>div &gt; p</td>
+                            <td>элементы p, являющиеся непосредственными потомками div</td>
+                        </tr>
+                        <tr>
+                            <td>div ~ p</td>
+                            <td>нижние соседи: все p на том же уровне вложенности, которые идут после div</td>
+                        </tr>
+                        <tr>
+                            <td>div + p</td>
+                            <td>первый нижний сосед: p на том же уровне вложенности, который идёт сразу после div</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h2>Псевдоклассы</h2>
+                <ul>
+                    <li>:not(селектор) <span class="comment">// все, кроме подходящих под селектор</span></li>
+                    <li>:focus</li>
+                    <li>:hover</li>
+                    <li>:empty</li>
+                    <li>:checked, :disabled, :enabled </li>
+                    <li>:target</li>
+                </ul>
+                <h2>Псевдоэлементы</h2>
+                <ul>
+                    <li>::before</li>
+                    <li>::after</li>
+                </ul>
+                <h2>Селекторы атрибутов</h2>
+                <table>
+                    <caption>
+                        <h4>На атрибут целиком:</h4>
+                    </caption>
+                    <tbody>
+                        <tr>
+                            <th>селектор</th>
+                            <th>элемент</th>
+                        </tr>
+                        <tr>
+                            <td>[attr] </td>
+                            <td>элемент с атрибутом <b>attr</b></td>
+                        </tr>
+                        <tr>
+                            <td>[attr="val"]</td>
+                            <td>элемент с атрибутом <b>attr</b> имеющий значениее <b>val</b></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table>
+                        <caption>
+                            <h4>На содержание:</h4>
+                        </caption>
+                        <tbody>
+                            <tr>
+                                <th>селектор</th>
+                                <th>элемент</th>
+                            </tr>
+                            <tr>
+                                <td>[attr*="val"] </td>
+                                <td>атрибут содержит подстроку <b>val</b>, например равен <b>"myvalue"</b></td>
+                            </tr>
+                            <tr>
+                                <td>[attr~="val"]</td>
+                                <td>атрибут содержит <b>val</b> как одно из значений через пробел</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table>
+                            <caption>
+                                <h4>На начало атрибута:</h4>
+                            </caption>
+                            <tbody>
+                                <tr>
+                                    <th>селектор</th>
+                                    <th>элемент</th>
+                                </tr>
+                                <tr>
+                                    <td>[attr^="val"]</td>
+                                    <td>атрибут начинается с <b>val</b>, например <b>"value"</b></td>
+                                </tr>
+                                <tr>
+                                    <td>[attr|="val"]</td>
+                                    <td>атрибут равен val или начинается с <b>val-</b>, например равен <b>"val-1"</b></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p class="comment">Например: [attr~="delete"] верно для "edit delete" и неверно для "undelete" или "no-delete"</p>
+
+                        <table>
+                                <caption>
+                                    <h4>На конец атрибута:</h4>
+                                </caption>
+                                <tbody>
+                                    <tr>
+                                        <th>селектор</th>
+                                        <th>элемент</th>
+                                    </tr>
+                                    <tr>
+                                        <td>[attr$="val"]</td>
+                                        <td>атрибут заканчивается на  <b>val</b>, например равен <b>"myval"</b></td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                            <h4>Фильтр по месту среди соседей с тем же тегом</h4>
+                            <ul>
+                                <li>:first-of-type</li>
+                                <li>:last-of-type</li>
+                                <li>:only-of-type</li>
+                                <li>:nth-of-type</li>
+                                <li>:nth-last-of-type</li>
+                            </ul>
+
+                            <table>
+                                    <caption>
+                                        <h4>Фильтр по месту потомков</h4>
+                                    </caption>
+                                    <tbody>
+                                        <tr>
+                                            <th>селектор</th>
+                                            <th>элемент</th>
+                                        </tr>
+                                        <tr>
+                                            <td>:first-child</td>
+                                            <td>первый потомок своего родителя</td>
+                                        </tr>
+                                        <tr>
+                                            <td>:last-child</td>
+                                            <td>последний потомок своего родителя</td>
+                                        </tr>
+                                        <tr>
+                                            <td>:only-child</td>
+                                            <td>единственный потомок своего родителя, соседних элементов нет</td>
+                                        </tr>
+                                        <tr>
+                                            <td>:nth-child(a)</td>
+                                            <td>потомок номер a своего родителя, например :nth-child(2) – второй потомок. Нумерация начинается с 1</td>
+                                        </tr> 
+                                        <tr>
+                                            <td>:nth-child(an+b)</td>
+                                            <td>расширение предыдущего селектора через указание номера потомка формулой, где a,b – константы, а под n подразумевается любое целое число</td>
+                                        </tr>  
+                                        <tr>
+                                            <td>:nth-child(2n+1)</td>
+                                            <td>элементы номер 1, 3…, то есть нечётные</td>
+                                        </tr>   
+                                        <tr>
+                                            <td>:nth-child(3n+2)</td>
+                                            <td>элементы номер 2, 5, 8 и так далее</td>
+                                        </tr>                                  
+                                    </tbody>
+                                </table>
+    </div>
+    <div class="back">
+            <a href="./index.html">Back</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" integrity="sha256-oSrCnRYXvHG31SBifqP2PM1uje7SJUyX0nTwO2RJV54=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <ul>
+            <li>Добавляем CSS: 
+                <ol>
+                    <li>используя внешнюю таблицу стилей <i class="comment">// emmet</i> <span class="gold">link:css</span></li>
+                    <li>&lt;head&gt; <span class="gold">&lt;style&gt; b {color: gold;}&lt;/style&gt;</span>&lt;/head&gt;</li>
+                    <li>inline: <span class="gold">&lt;b style="color: gold"&gt;HELLO&lt;/b&gt;</span></li>
+                </ol>
+            </li>
+            <li>Синтаксис CSS:
+                <ul>
+                    <li>CSS-правило: <span class="gold">b {color: gold;}</span></li>
+                    <li>селектор: <span class="gold">b {...} </span></li>
+                    <li>свойство: <span class="gold">{color: ...}</span></li>
+                    <li>значениe: <span class="gold">{  ...   :gold;}</span></li>
+                </ul>
+            </li>
+            <li><a href="./selectors.html" target="_blank">Селекторы:</a>
+                <ul>
+                    <li>любой элемент: <span class="gold">*</span></li>
+                    <li>по тегу: <span class="gold">div</span>  </li>
+                    <li>по классу: <span class="gold">.wrapper</span> </li>
+                    <li>по псевдоклассу: <span class="gold">:hover</span></li>
+                    <li>селекторы атрибута <span class="gold">[href="#"]</span></li>
+                    <li>по id: <span class="gold">#uniq</span> </li>
+                    <li>селекторы отношений:
+                        <ul>
+                            <li>потомков
+                                <ul>
+                                    <li>непосредственные потомки: <span class="gold">div&gt;p</span></li>
+                                    <li>потомки на любом уровне вложенности: <span class="gold">div p</span></li>
+                                </ul>
+                            </li>
+                            <li>селекторы нижних соседей
+                                <ul>
+                                    <li>первый нижний сосед: <span class="gold">div+p</span></li>
+                                    <li>все нижние соседи: <span class="gold">div~p</span></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>DevTools для CSS</li>
+            <li>Каскад.  
+                <ul>
+                    <li><a href="./prioritet.html" target="_blank">Приоритетность. </a></li>
+                    <li>Наследование.</li>
+                    <li>Порядок размещения списка файлов CSS.</li>
+                </ul> 
+            </li>
+            <li>
+                <a href="./block.html" target="_blank">Составляющие элемента:</a>
+                <ul>
+                    <li> <a href="https://codepen.io/Gorbulin/pen/gKrZxx" target="_blank">content</a></li>
+                    <li> <a href="https://codepen.io/Gorbulin/pen/yEOZdV" target="_blank">border</a> </li>
+                    <li> <a href="https://codepen.io/Gorbulin/pen/vrGwyR" target="_blank">margin</a></li>
+                    <li>padding</li>
+                    <li><a href="https://gennadiy1970.github.io/box-model/" target="_blank">тест</a></li>
+                </ul>
+            </li>
+            <li>Модель визуального форматирования: box-sizing</li>
+            <li>Сброс стилей по умолчанию от user agent</li>
+            <li>Cвойство <a href="./display.html" target="_blank">display:</a>   
+                <ul>
+                    <li>inline</li>
+                    <li>inline-block</li>
+                    <li>block</li>
+                </ul>
+            </li>
+            <li>div.wrapper (назначение, использование)</li>
+            <li>Горизонтальное и вертикальное <a href="https://codepen.io/Gorbulin/pen/PaNrmq" target="_blank">выравнивание</a>:
+                <ul>
+                    <li>строчных элементов
+                        <ul>
+                            <li>text-align: center</li>
+                            <li>для одной строки в блоке:
+                                задать блоку height===line-height
+                            </li>
+                            <li> <a href="https://codepen.io/Gorbulin/pen/Wywqgj" target="_blank">в некоторых случаях</a> vertical-align: middle</li>
+                        </ul>
+                    </li>
+                    <li>блочных элементов
+                        <ul>
+                            <li>margin: auto</li>
+                            <li>line-height === height</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="./calc.html" target="_blank">Функция calc</a></li>
+            <li>
+                <a href="https://codepen.io/Gorbulin/pen/KezePj?editors=1100" target="_blank"> Верстка горизонтального меню</a>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>

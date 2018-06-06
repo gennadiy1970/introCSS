@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PRIORITET</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" integrity="sha256-oSrCnRYXvHG31SBifqP2PM1uje7SJUyX0nTwO2RJV54=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="./css/style.css">
+    <style>
+        table {
+            border: 1px double #eee;
+        }
+        th:first-of-type,
+        td:first-of-type {
+            color: #eee;
+            width: 250px;
+        }
+        td.comment:first-of-type {
+            color: grey;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <h2>Приоритет </h2>
+        <h4>Позиционное счисление:</h4> 
+        <p>позиция больше - приоритет(номер) выше: <i class="gold">8 7 6 5 _ 4 3 2 1 . 0</i></p>
+        <p>возможные значения селектора: <i class="gold">0 0 0 0 _ 0 0 0 0 . 0</i></p>
+        <table>
+            <caption>
+                <h5>Селектор: <span class="gold">*</span></h5>
+            </caption>
+            <tbody>
+                <tr>
+                    <th> <p>0 0 0 0 _ 0 0 0 0 . <span class="gold">0</span></p></th>
+                    <th>* {}</th>
+                    <th>минимально возможный приоритет</th>
+                </tr>
+            </tbody>
+        </table>
+        <table>
+                <caption>
+                    <h5>Селектор: <span class="gold">tag, pseudo-elements</span></h5>
+                </caption>
+                <tbody>
+                    <tr>
+                        <td rowspan="5"><p>0 0 0 0 _ 0 0 0 <span class="gold">0</span> . 0</p></td>
+                        <td>div {}</td>
+                        <td>приоритет 0000 0001</td>
+                    </tr>
+                    <tr>
+                        <td>div, p {}</td>
+                        <td>перечисление, приоритет 0000 0001</td>
+                    </tr>
+                    <tr>
+                        <td>ul li a {}</td>
+                        <td>вложенность, приоритет 0000 0003</td>
+                    </tr>
+                    <tr>
+                        <td>ul li, div p, p span {}</td>
+                        <td>перечисление, вложенность, приоритет 0000 0002</td>
+                    </tr>
+                    <tr>
+                        <td>ul li a::before {}</td>
+                        <td>вложенность,   приоритет 0000 0004</td>
+                    </tr>
+                </tbody>
+            </table>
+            <table>
+                    <caption>
+                        <h5>Селектор: <span class="gold">attribute, pseudo-classes, class name </span></h5>
+                    </caption>
+                    <tbody>
+                        <tr>
+                            <td rowspan="5"><p>0 0 0 0 _ 0 0 <span class="gold">0</span> 0 . 0</p></td>
+                            <td>.head .logo {}</td>
+                            <td>вложенность,   приоритет 0000 0020</td>
+                        </tr>
+                        <tr>
+                            <td>.head &gt; .logo {}</td>
+                            <td>вложенность,   приоритет 0000 0020</td>
+                        </tr>
+                        <tr>
+                            <td>.head, .logo {} </td>
+                            <td>перечисление,   приоритет 0000 0010</td>
+                        </tr>
+                        <tr>
+                            <td>div:first-child {}</td>
+                            <td>приоритет 0000 0011</td>
+                        </tr>
+                        <tr>
+                            <td>[alt="logo"] {}</td>
+                            <td>приоритет 0000 0010</td>
+                        </tr>
+                    </tbody>
+                </table> 
+                
+                <table>
+                        <caption>
+                            <h5>Селектор: <span class="gold">id name </span></h5>
+                        </caption>
+                        <tbody>
+                            <tr>
+                                <td rowspan="3"><p>0 0 0 0 _ 0 <span class="gold">0</span> 0 0 . 0</p></td>
+                                <td>#head</td>
+                                <td>приоритет 0000 0100</td>
+                            </tr>
+                            <tr>
+                                <td>#head, #logo {}</td>
+                                <td>перечисление, приоритет 0000 0100</td>
+                            </tr>
+                            <tr>
+                                <td>#head &gt; #logo {}</td>
+                                <td>вложенность, приоритет 0000 0200</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table>
+                            <caption>
+                                <h5>Селектор: <span class="gold">inlyne style</span></h5>
+                            </caption>
+                            <tbody>
+                                <tr>
+                                    <td rowspan="2"><p>0 0 0 0 _ <span class="gold">0</span> 0 0 0 . 0</p></td>
+                                    <td>&lt;p style="color: red;"&gt;</td>
+                                    <td>приоритет 0000 1000</td>
+                                </tr>
+                                <tr>
+                                    <td>&lt;p id="r" class="r" style="color: red;"&gt;</td>
+                                    <td>приоритет 0000 1110
+                                        <table>
+                                            <tr>
+                                                <td class="comment">style=""</td>
+                                                <td class="comment"> 0000 1000</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="comment">#r </td>
+                                                <td class="comment">0000 0100</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="comment">.r </td>
+                                                <td class="comment">0000 0010</td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                    
+                            </tbody>
+                        </table>
+    </div>
+</body>
+</html>
